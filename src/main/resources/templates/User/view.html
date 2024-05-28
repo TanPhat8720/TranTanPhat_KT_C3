@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+<div class="container mt-4">
+    <h2>Student Detail</h2>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Student Information</h5>
+            <p class="card-text"><strong>ID:</strong> <span th:text="${user.id}"></span></p>
+            <p class="card-text"><strong>UserName:</strong> <span th:text="|${user.username}|"></span></p>
+            <p class="card-text"><strong>Name:</strong> <span th:text="|${user.lastname} ${user.firstname}|"></span></p>
+            <p class="card-text"><strong>Role:</strong> <span th:text="${user.role.role_name}"></span></p>
+            <p class="card-text"><strong>Email:</strong> <span th:text="${user.email}"></span></p>
+            <p class="card-text"><strong>Password:</strong> <span th:text="${user.password}"></span></p>
+            <a class="btn btn-warning btn-sm" th:href="'/users/edit/'+${user.id}">
+                <i class="fas fa-pen"></i>
+                Edit
+            </a>
+            <a href="/users" class="btn btn-danger btn-sm">
+                <i class="fas fa-undo"></i>
+                Back to List
+            </a>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

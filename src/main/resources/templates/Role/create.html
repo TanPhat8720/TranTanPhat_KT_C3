@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Role</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-4">
+    <h2>Create Role</h2>
+    <form action="#" th:action="@{/roles/create}" th:object="${role}" method="post">
+        <div class="form-group">
+            <label for="role_name">Role Name</label>
+            <input type="text" class="form-control" id="role_name" th:field="*{role_name}" name="role_name" required>
+        </div>
+        <input class="btn btn-primary" type="submit" value="Submit">
+        <a href="/roles" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+</body>
+</html>

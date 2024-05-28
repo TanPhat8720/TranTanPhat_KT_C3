@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Student</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+<div class="container mt-4">
+    <h2>Edit Student</h2>
+    <form action="#" th:action="'/users/saveedit'" th:object="${user}" method="post">
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id" th:field="*{id}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="username">User Name</label>
+            <input type="text" class="form-control" id="username" th:field="*{username}" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input type="text" class="form-control" id="firstname" name="firstname" th:field="*{firstname}" required>
+        </div>
+        <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input type="text" class="form-control" id="lastname" name="lastname" th:field="*{lastname}" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email"  th:field="*{email}" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password"  th:field="*{password}" required>
+        </div>
+        <div class="form-group">
+            <label for="role">Role</label>
+            <select class="form-control" id="role" th:field="*{role}" name="role" required>
+                <option value="" disabled selected>Select a role</option>
+                <option th:each="role : ${role}" th:value="${role.role_id}" th:text="${role.role_name}"></option>
+            </select>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="isdeleted" th:field="*{isdeleted}" name="isdeleted">
+            <label class="form-check-label" for="isdeleted">Is Deleted</label>
+        </div>
+        <button type="submit"  value="saveedit" class="btn btn-primary">Save</button>
+        <a href="/users" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+</body>
+</html>
