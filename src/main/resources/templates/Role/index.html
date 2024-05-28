@@ -22,7 +22,6 @@
             <td th:text="${role.role_name}"></td>
             <td>
                 <a th:href="@{/roles/view/{id}(id=${role.role_id})}" class="btn btn-info">View</a>
-                <a th:href="@{/roles/edit/{id}(id=${role.role_id})}" class="btn btn-warning">Edit</a>
             </td>
         </tr>
         </tbody>

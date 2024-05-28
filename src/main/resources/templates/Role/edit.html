@@ -10,6 +10,9 @@
     <h2>Edit Role</h2>
     <form action="#" th:action="@{/roles/saveedit}" th:object="${role}" method="post">
         <div class="form-group">
+            <input type="hidden" class="form-control" id="role_id" th:field="*{role_id}" name="role_id"  required>
+        </div>
+        <div class="form-group">
             <label for="role_name">Role Name</label>
             <input type="text" class="form-control" id="role_name" th:field="*{role_name}" name="role_name" required>
         </div>

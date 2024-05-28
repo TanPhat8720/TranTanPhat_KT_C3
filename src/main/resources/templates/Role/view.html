@@ -18,7 +18,10 @@
             <td th:text="${role.role_name}"></td>
         </tr>
     </table>
+    <a th:href="@{/roles/edit/{id}(id=${role.role_id})}" class="btn btn-warning">Edit</a>|
     <a href="/roles" class="btn btn-secondary">Back</a>
+
+
 </div>
 </body>
 </html>
